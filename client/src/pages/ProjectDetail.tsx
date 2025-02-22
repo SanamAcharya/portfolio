@@ -38,16 +38,20 @@ export default function ProjectDetail() {
     <motion.div 
       initial="initial"
       animate="animate"
-      className="min-h-screen bg-background py-12"
+      className="min-h-screen bg-background"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link href="/">
-          <Button variant="ghost" className="mb-8">
-            <ChevronLeft className="mr-2 h-4 w-4" />
-            Back to Projects
-          </Button>
-        </Link>
+      <div className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <Link href="/">
+            <Button variant="ghost" className="gap-2">
+              <ChevronLeft className="h-4 w-4" />
+              Back to Projects
+            </Button>
+          </Link>
+        </div>
+      </div>
 
+      <div className="max-w-6xl mx-auto px-6 py-8">
         <motion.div variants={fadeIn} className="space-y-12">
           {/* Project Header with Image and Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
