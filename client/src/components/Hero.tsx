@@ -8,11 +8,11 @@ export default function Hero() {
       variants={staggerContainer}
       initial="initial"
       animate="animate"
-      className="min-h-[80vh] flex flex-col justify-center py-20"
+      className="py-20 md:py-32"
     >
       <motion.p 
         variants={fadeIn}
-        className="text-lg text-muted-foreground mb-4"
+        className="text-sm text-muted-foreground mb-4"
       >
         UI/UX Designer & Developer
       </motion.p>
@@ -27,7 +27,7 @@ export default function Hero() {
 
       <motion.p 
         variants={fadeIn}
-        className="text-lg text-muted-foreground max-w-2xl mb-8"
+        className="text-base text-muted-foreground max-w-2xl mb-8"
       >
         I'm a designer focused on creating beautiful and functional interfaces 
         that help businesses grow and succeed in the digital world.
