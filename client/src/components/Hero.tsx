@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { fadeIn, staggerContainer } from "@/lib/animations";
+import { useContactDialog } from "@/components/ContactDialog";
 
 export default function Hero() {
-  const scrollToContact = () => {
-    const contactSection = document.querySelector('#contact-section');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  const { openContactDialog } = useContactDialog();
+
+  const scrollToProjects = () => {
+    const projectsSection = document.querySelector('#projects');
+    projectsSection?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
   };
 
   return (
@@ -42,10 +48,10 @@ export default function Hero() {
         variants={fadeIn}
         className="flex gap-4"
       >
-        <Button size="lg" asChild>
-          <a href="#projects">View Projects</a>
+        <Button size="lg" onClick={scrollToProjects}>
+          View Projects
         </Button>
-        <Button size="lg" variant="outline" onClick={scrollToContact}>
+        <Button size="lg" variant="outline" onClick={openContactDialog}>
           Contact Me
         </Button>
       </motion.div>
