@@ -7,7 +7,7 @@ import CopyButton from "./CopyButton";
 
 export default function Contact() {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-start md:items-center py-6 border-b">
+    <div id="contact-section" className="flex flex-col md:flex-row justify-between items-start md:items-center py-6 border-b">
       <div className="space-y-4 md:space-y-0 md:space-x-8 flex flex-col md:flex-row">
         <div className="flex items-center gap-2">
           <Mail className="h-4 w-4 text-muted-foreground" />

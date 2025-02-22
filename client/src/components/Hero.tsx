@@ -3,6 +3,11 @@ import { Button } from "@/components/ui/button";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 
 export default function Hero() {
+  const scrollToContact = () => {
+    const contactSection = document.querySelector('#contact-section');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <motion.section 
       variants={staggerContainer}
@@ -40,8 +45,8 @@ export default function Hero() {
         <Button size="lg" asChild>
           <a href="#projects">View Projects</a>
         </Button>
-        <Button size="lg" variant="outline" asChild>
-          <a href="#contact">Contact Me</a>
+        <Button size="lg" variant="outline" onClick={scrollToContact}>
+          Contact Me
         </Button>
       </motion.div>
     </motion.section>

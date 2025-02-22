@@ -14,12 +14,18 @@ export default function ProjectDetail() {
       role: "UI/UX Designer & Developer",
       timeline: "3 months (Q1 2024)",
       tools: "Figma, React, TailwindCSS",
-      image: "https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5",
+      headerImage: "https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5",
+      images: [
+        "https://images.unsplash.com/photo-1627398242454-45a1465c2479",
+        "https://images.unsplash.com/photo-1553877522-43269d4ea984",
+        "https://images.unsplash.com/photo-1551650975-87deedd944c3",
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+      ],
+      overview: "A detailed description of the project, its goals, and the problems it solves. This section provides context about why the project was undertaken and its significance.",
       challenge: "Description of the main challenges faced during the project and how they were approached. This includes technical challenges, design constraints, and user requirements.",
       solution: "Explanation of the solutions implemented to address the challenges. This covers the design decisions, technical implementations, and user experience considerations.",
       results: "Discussion of the project's outcomes, its impact on users, and any metrics or feedback received. This helps demonstrate the value and success of the solution."
-    },
-    // Add other projects as needed
+    }
   };
 
   const project = projects[id as keyof typeof projects];
@@ -42,16 +48,16 @@ export default function ProjectDetail() {
           </Button>
         </Link>
 
-        <motion.div variants={fadeIn} className="space-y-8">
+        <motion.div variants={fadeIn} className="space-y-12">
           <div className="aspect-video rounded-lg overflow-hidden">
             <img 
-              src={project.image} 
+              src={project.headerImage} 
               alt={project.title}
               className="w-full h-full object-cover"
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-y py-8">
             <div>
               <h3 className="font-semibold mb-2">Role</h3>
               <p className="text-muted-foreground">{project.role}</p>
@@ -66,7 +72,12 @@ export default function ProjectDetail() {
             </div>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-12">
+            <section>
+              <h2 className="text-2xl font-semibold mb-4">Overview</h2>
+              <p className="text-muted-foreground">{project.overview}</p>
+            </section>
+
             <section>
               <h2 className="text-2xl font-semibold mb-4">The Challenge</h2>
               <p className="text-muted-foreground">{project.challenge}</p>
@@ -75,6 +86,18 @@ export default function ProjectDetail() {
             <section>
               <h2 className="text-2xl font-semibold mb-4">The Solution</h2>
               <p className="text-muted-foreground">{project.solution}</p>
+
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                {project.images.map((image, index) => (
+                  <div key={index} className="aspect-video rounded-lg overflow-hidden">
+                    <img 
+                      src={image} 
+                      alt={`Project image ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
             </section>
 
             <section>
