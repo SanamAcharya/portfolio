@@ -49,35 +49,42 @@ export default function ProjectDetail() {
         </Link>
 
         <motion.div variants={fadeIn} className="space-y-12">
-          <div className="aspect-video rounded-lg overflow-hidden">
-            <img 
-              src={project.headerImage} 
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
+          {/* Project Header with Image and Details */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="aspect-[4/3] rounded-lg overflow-hidden">
+              <img 
+                src={project.headerImage} 
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="space-y-8">
+              <div>
+                <p className="text-sm text-muted-foreground mb-2">{project.category}</p>
+                <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
+                <p className="text-muted-foreground">{project.overview}</p>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6">
+                <div>
+                  <h3 className="font-semibold mb-2">Role</h3>
+                  <p className="text-muted-foreground">{project.role}</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Timeline</h3>
+                  <p className="text-muted-foreground">{project.timeline}</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Tools Used</h3>
+                  <p className="text-muted-foreground">{project.tools}</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-y py-8">
-            <div>
-              <h3 className="font-semibold mb-2">Role</h3>
-              <p className="text-muted-foreground">{project.role}</p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">Timeline</h3>
-              <p className="text-muted-foreground">{project.timeline}</p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">Tools Used</h3>
-              <p className="text-muted-foreground">{project.tools}</p>
-            </div>
-          </div>
-
-          <div className="space-y-12">
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">Overview</h2>
-              <p className="text-muted-foreground">{project.overview}</p>
-            </section>
-
+          {/* Project Content */}
+          <div className="space-y-12 border-t pt-12">
             <section>
               <h2 className="text-2xl font-semibold mb-4">The Challenge</h2>
               <p className="text-muted-foreground">{project.challenge}</p>
