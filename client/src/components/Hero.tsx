@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import { useContactDialog } from "@/components/ContactDialog";
+import { personalInfo } from "@/content/personal-info";
 
 export default function Hero() {
   const { openContactDialog } = useContactDialog();
@@ -25,23 +26,21 @@ export default function Hero() {
         variants={fadeIn}
         className="text-sm text-muted-foreground mb-4"
       >
-        UI/UX Designer & Developer
+        {personalInfo.role}
       </motion.p>
 
       <motion.h1 
         variants={fadeIn}
         className="text-4xl md:text-6xl font-bold leading-tight mb-6"
       >
-        Creating digital<br />
-        experiences that matter
+        {personalInfo.headline}
       </motion.h1>
 
       <motion.p 
         variants={fadeIn}
         className="text-base text-muted-foreground max-w-2xl mb-8"
       >
-        I'm a designer focused on creating beautiful and functional interfaces 
-        that help businesses grow and succeed in the digital world.
+        {personalInfo.description}
       </motion.p>
 
       <motion.div 
