@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import BackToTop from "@/components/BackToTop";
 import { fadeIn } from "@/lib/animations";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <Projects />
       </div>
+      <BackToTop />
     </motion.div>
   );
 }

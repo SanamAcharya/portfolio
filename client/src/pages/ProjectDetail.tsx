@@ -94,7 +94,8 @@ export default function ProjectDetail() {
               <h2 className="text-2xl font-semibold mb-4">The Solution</h2>
               <p className="text-muted-foreground">{project.solution}</p>
 
-              <div className="grid grid-cols-2 gap-4 mt-8">
+              <h3 className="text-xl font-semibold mt-8 mb-4">Project Gallery</h3>
+              <div className="grid grid-cols-2 gap-4">
                 {project.images.map((image, index) => (
                   <div key={index} className="aspect-video rounded-lg overflow-hidden">
                     <img 
